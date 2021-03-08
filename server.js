@@ -22,6 +22,8 @@ app.use(cors());
 // Middleware to handle Students routes
 app.use('/api/students', studentsRouter);
 
+// Fallback route
+app.use('/', (req, res) => res.send("Welcome to the API"));
 // The port we will listen to. {5000} is the fallback default
 const PORT = process.env.PORT || 5000;
 
