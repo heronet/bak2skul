@@ -7,6 +7,7 @@ require('dotenv').config({path: './.config/.env'})
 const connectDB = require('./.config/db');
 const studentsRouter = require('./routes/student');
 const utilsRouter = require('./routes/utils');
+const usersRouter = require('./routes/user');
 
 // Connect to the Database
 connectDB();
@@ -22,6 +23,7 @@ app.use(cors());
 
 // Middleware to handle Students routes
 app.use('/api/students', studentsRouter);
+app.use('/api/users', usersRouter)
 app.use('/api/utils', utilsRouter);
 
 // Fallback route
